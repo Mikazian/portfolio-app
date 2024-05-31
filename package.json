@@ -4,7 +4,8 @@
   "description": "portfolio-xiong-mike",
   "main": "index.js",
   "scripts": {
-    "dev": "cd packages/frontend && npm run dev"
+    "dev": "cd packages/frontend && npm run dev",
+    "start": "cd packages/backend && nest start"
   },
   "author": "Xiong Mike",
   "license": "ISC",

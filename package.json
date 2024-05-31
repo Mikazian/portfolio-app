@@ -1,0 +1,15 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "portfolio-xiong-mike",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd packages/frontend && npm run dev"
+  },
+  "author": "Xiong Mike",
+  "license": "ISC",
+  "workspaces": [
+    "packages/frontend",
+    "packages/backend"
+  ]
+}

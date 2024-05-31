@@ -1,0 +1,13 @@
+# Dépendances
+node_modules
+
+# Fichiers de build
+dist
+tmp
+
+# Fichiers du système
+.DS_Store
+Thumbs.db
+
+*.env*
+!*.env*.sample

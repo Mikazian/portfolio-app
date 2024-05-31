@@ -1,0 +1,29 @@
+name: 'portfolio-app'
+
+services:
+  portfolio-nginx:
+    image: nginx:1.27.0-alpine
+    restart: always
+    ports:
+      - 80:8080
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+
+  portfolio-database:
+    image: postgres:16.3-alpine3.20
+    restart: always
+    ports:
+      - ${POSTGRES_PORT}:5432
+    env_file:
+      - ./.env
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        ['CMD', 'pg_isready', 'ping', '-h', 'localhost', '-uuser', '-ppassword']
+      interval: 5s 
+      timeout: 5s 
+      retries: 20
+      start_period: 10s

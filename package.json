@@ -5,12 +5,20 @@
   "main": "index.js",
   "scripts": {
     "dev": "cd packages/frontend && npm run dev",
-    "start": "cd packages/backend && nest start"
+    "start": "cd packages/backend && nest start",
+    "compose:up": "docker compose -f ./deployment/docker-compose.dev.yml up -d",
+    "compose:down": "docker compose -f ./deployment/docker-compose.dev.yml down"
   },
   "author": "Xiong Mike",
   "license": "ISC",
   "workspaces": [
     "packages/frontend",
     "packages/backend"
-  ]
+  ],
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/node": "^20.12.13",
+    "concurrently": "^8.2.2",
+    "typescript": "^5.4.5"
+  }
 }

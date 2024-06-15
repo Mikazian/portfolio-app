@@ -4,7 +4,7 @@
   "description": "portfolio-xiong-mike",
   "main": "index.js",
   "scripts": {
-    "dev": "cd packages/frontend && npm run dev",
+    "dev": "cd packages/frontend && npm run start",
     "start": "cd packages/backend && nest start",
     "compose:up": "docker compose -f ./deployment/docker-compose.dev.yml up -d",
     "compose:down": "docker compose -f ./deployment/docker-compose.dev.yml down"

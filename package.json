@@ -7,13 +7,16 @@
     "dev": "cd packages/frontend && npm run start",
     "start": "cd packages/backend && nest start",
     "compose:up": "docker compose -f ./deployment/docker-compose.dev.yml up -d",
-    "compose:down": "docker compose -f ./deployment/docker-compose.dev.yml down"
+    "compose:down": "docker compose -f ./deployment/docker-compose.dev.yml down",
+    "build:frontend": "cd packages/frontend && npm run build",
+    "build:backend": "cd packages/backend && npm run build"
   },
   "author": "Xiong Mike",
   "license": "ISC",
   "workspaces": [
     "packages/frontend",
-    "packages/backend"
+    "packages/backend",
+    "packages/libs"
   ],
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",

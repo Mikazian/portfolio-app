@@ -1,8 +1,18 @@
+import { config } from 'dotenv';
+
+config();
+
 export default () => ({
-  host: process.env.BACKEND_HOST || 'localhost',
-  port: parseInt(process.env.BACKEND_PORT, 10) || 3000,
+  api: {
+    host: process.env.BACKEND_HOST,
+    port: parseInt(process.env.BACKEND_PORT, 10),
+  },
   database: {
-    host: process.env.DATABASE_HOST,
-    port: parseInt(process.env.DATABASE_PORT, 10) || 5432,
+    type: 'postgres' as const,
+    host: process.env.DB_HOST,
+    port: parseInt(process.env.DB_PORT, 10),
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
   },
 });

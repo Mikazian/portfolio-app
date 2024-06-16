@@ -1,0 +1,3 @@
+const Migrations = [];
+
+export { Migrations };
